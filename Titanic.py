@@ -18,7 +18,7 @@ Embarked0 = st.selectbox('Select the Location of Embarkment', ['Southampton','Ch
 FamilySize0 = st.slider('Select the number of Persons from his/her Family Travelled in Titanic', 1, 11)
 if Sex0 == 'Male':
   Title_x = ['Mr','Master','Dr','Rev','Col','Major','Jonkheer','Don','Capt','Sir']
- else:
+else:
   Title_x = ['Miss','Mrs','Dr','Mlle','Countess','Ms','Lady','Dona','Mme']
 Title0 = st.selectbox('Select the Title Used (if any)',
                               Title_x)
