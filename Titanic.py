@@ -16,9 +16,12 @@ Fare0 = st.number_input('Enter the Fare paid by the Passenger', min_value=0, max
 Cabin0 = st.selectbox('Select the Cabin', ['A','B','C','D','E','F','G','T'])
 Embarked0 = st.selectbox('Select the Location of Embarkment', ['Southampton','Cherbourg','Queenstown'])
 FamilySize0 = st.slider('Select the number of Persons from his/her Family Travelled in Titanic', 1, 11)
+if Sex0 == 'Male':
+  Title_x = ['Mr','Master','Dr','Rev','Col','Major','Jonkheer','Don','Capt','Sir']
+ else:
+  Title_x = ['Miss','Mrs','Dr','Mlle','Countess','Ms','Lady','Dona','Mme']
 Title0 = st.selectbox('Select the Title Used (if any)',
-                              ['Mr','Miss','Mrs','Master','Dr','Rev','Col','Major','Mlle','Countess','Ms',
-                               'Lady','Jonkheer','Don','Dona','Mme','Capt','Sir'])
+                              Title_x)
 
 # Mapping Sex
 sex_mapping = {'Male': 0, 'Female': 1}
