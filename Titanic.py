@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.svm import SVC
 from joblib import dump, load
 
-st.set_page_config(page_title='Titanic Survivor Prediction', page_icon='🚢')
+st.set_page_config(page_title='Titanic Survivor Prediction', page_icon='🚢', layout='wide')
 st.header('Titanic Survivor Prediction')
 
 model = load('titanicSVM.pkl')
