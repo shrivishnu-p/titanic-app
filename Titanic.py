@@ -9,19 +9,31 @@ st.header('Titanic Survivor Prediction')
 
 model = load('titanicSVM.pkl')
 
-Sex0 = st.radio('Select Gender of the Passenger', ['Male', 'Female'])
-Age0 = st.number_input('Enter the Age of the Passenger', min_value=0, max_value=100, value=20)
-Pclass = st.selectbox('Select Passenger Class', [1,2,3])
-Fare0 = st.number_input('Enter the Fare paid by the Passenger', min_value=0, max_value=150, value=10)
-Cabin0 = st.selectbox('Select the Cabin', ['A','B','C','D','E','F','G','T'])
-Embarked0 = st.selectbox('Select the Location of Embarkment', ['Southampton','Cherbourg','Queenstown'])
-FamilySize0 = st.slider('Select the number of Persons from his/her Family Travelled in Titanic', 1, 11)
+# Form Layout
+a1, a2, a3 = st.beta_columns(3)
+b1, b2, b3 = st.beta_columns(3)
+c1, c2 = st.beta_columns(2)
+
+with a1:
+  Sex0 = st.radio('Select Gender of the Passenger', ['Male', 'Female'])
+with a2:
+  Age0 = st.number_input('Enter the Age of the Passenger', min_value=0, max_value=100, value=20)
+with a3:
+  Pclass = st.selectbox('Select Passenger Class', [1,2,3])
+with b1:
+  Fare0 = st.number_input('Enter the Fare paid by the Passenger', min_value=0, max_value=150, value=10)
+with b2:
+  Cabin0 = st.selectbox('Select the Cabin', ['A','B','C','D','E','F','G','T'])
+with b3:
+  Embarked0 = st.selectbox('Select the Location of Embarkment', ['Southampton','Cherbourg','Queenstown'])
+with c1:
+  FamilySize0 = st.slider('Select the number of Persons from his/her Family Travelled in Titanic', 1, 11)
 if Sex0 == 'Male':
   Title_x = ['Mr','Master','Dr','Rev','Col','Major','Jonkheer','Don','Capt','Sir']
 else:
   Title_x = ['Miss','Mrs','Dr','Mlle','Countess','Ms','Lady','Dona','Mme']
-Title0 = st.selectbox('Select the Title Used (if any)',
-                              Title_x)
+with c2:
+  Title0 = st.selectbox('Select the Title Used (if any)', Title_x)
 
 # Mapping Sex
 sex_mapping = {'Male': 0, 'Female': 1}
